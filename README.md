@@ -1,0 +1,1 @@
+Angular con dashboard, d3, ngxchart, echart
