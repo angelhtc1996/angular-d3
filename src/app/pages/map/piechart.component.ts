@@ -6,7 +6,7 @@ import $ from 'jquery';
   selector: 'pie-chart',
   template: `<div class="mGraph-wrapper">
   <div class="mGraph" id="piechart"></div>
-</div>`,
+</div>`, 
   styles: [`
   .mGraph-wrapper{
     width: 100%;
@@ -24,8 +24,31 @@ import $ from 'jquery';
   }`]
 })
 export class PiechartComponent implements OnInit{
+  
   constructor(private elm:ElementRef){}
   ngOnInit(){
+
+    const myChart = echarts.init(document.getElementById('main'));
+    // 绘制图表
+    myChart.setOption({
+        title: {
+            text: 'Tarifas Mensuales'
+        },
+        tooltip: {},
+        xAxis: {
+            data: ['Ene-mar', 'abr-jun', 'jul-sep', 'oct-dic']
+        },
+        yAxis: {},
+        series: [{
+            name: 'Ventas',
+            type: 'bar',
+            data: [5, 20, 36, 10]
+        }]
+    });
+
+
+
+
     let piechart =  echarts.init($(this.elm.nativeElement).find('#piechart')[0]);
     piechart.setOption({
         backgroundColor:'#FFF',

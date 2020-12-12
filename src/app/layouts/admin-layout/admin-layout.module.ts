@@ -20,6 +20,7 @@ import { amchartComponent } from '../../pages/user/amchart.component'
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { JsonService } from 'src/app/pages/user/json.service';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { JsonService } from 'src/app/pages/user/json.service';
     FormsModule,
     HttpClientModule,
     NgbModule,
+    HighchartsChartModule
   ],
   declarations: [
     DashboardComponent,

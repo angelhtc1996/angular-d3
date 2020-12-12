@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ElementRef } from '@angular/core';
-
+ 
 import * as echarts from "echarts";
 // var echarts = require('echarts')
 
@@ -37,13 +37,13 @@ export class StackchartComponent implements OnInit {
     legend:"HumanResource",
     dataPoints:[170, 132, 291, 254, 145, 390, 610]
   }];
-  // @Input() name: string;
-  // @Input() data:any;
+  //@Input() name: string;
+  //@Input() data:any;
   series=[];
   legends=[];
   constructor(private elm:ElementRef){}
   ngOnInit(){
-    /*let stackchart = echarts.init($(this.elm.nativeElement).find('#mGraph_sale')[0]);
+    let stackchart = echarts.init($(this.elm.nativeElement).find('#mGraph_sale')[0]);
     this.data.forEach(x=>{
       this.series.push({
         name:x.legend,
@@ -91,7 +91,7 @@ export class StackchartComponent implements OnInit {
       series: this.series,
     },
    
-    )*/
+    )
 
   }
 }
