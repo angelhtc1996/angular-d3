@@ -21,6 +21,9 @@ import { amchartComponent } from '../../pages/user/amchart.component'
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { JsonService } from 'src/app/pages/user/json.service';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { HighchartsService } from '../../pages/notifications/Highcharts.service';
+
+
 
 @NgModule({
   imports: [
@@ -29,7 +32,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     FormsModule,
     HttpClientModule,
     NgbModule,
-    HighchartsChartModule
+    HighchartsChartModule, 
+
   ],
   declarations: [
     DashboardComponent,
@@ -44,6 +48,6 @@ import { HighchartsChartModule } from 'highcharts-angular';
     PiechartComponent,
     amchartComponent
   ],
-  providers: [JsonService ],
+  providers: [JsonService, HighchartsService],
 })
 export class AdminLayoutModule {}

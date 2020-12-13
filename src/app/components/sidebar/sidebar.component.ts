@@ -12,11 +12,10 @@ export const ROUTES: RouteInfo[] = [
     title: "Dashboard",
     icon: "icon-chart-pie-36",
     class: ""
-  },
-  {
-    path: "/icons",
-    title: "D3",
-    icon: "icon-atom",
+  },{
+    path: "/user",
+    title: "Extras",
+    icon: "icon-single-02",
     class: ""
   },
   {
@@ -30,13 +29,12 @@ export const ROUTES: RouteInfo[] = [
     icon: "icon-bell-55",
     class: ""
   },
-
   {
-    path: "/user",
-    title: "Extras",
-    icon: "icon-single-02",
+    path: "/icons",
+    title: "D3",
+    icon: "icon-atom",
     class: ""
-  },
+  }
   /*{
     path: "/tables",
     title: "Table List",
