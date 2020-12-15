@@ -2,7 +2,7 @@ import { Component, NgZone, OnInit } from "@angular/core";
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import * as am4maps from "@amcharts/amcharts4/maps";
-import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow";
+import am4geodata_usaLow from "@amcharts/amcharts4-geodata/usaLow";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import { JsonService } from './json.service';
 
@@ -103,32 +103,22 @@ export class UserComponent implements OnInit {
       let chart = am4core.create("chartdiv4", am4maps.MapChart);
 
       // Set map definition
-      chart.geodata = am4geodata_worldLow;
+      chart.geodata = am4geodata_usaLow;
 
 // Set projection
-chart.projection = new am4maps.projections.Miller();
+chart.projection = new am4maps.projections.AlbersUsa();
 
 // Create map polygon series
-let polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
-
-// Exclude Antartica
-polygonSeries.exclude = ["AQ"];
-
-// Make map load polygon (like country names) data from GeoJSON
+var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
 polygonSeries.useGeodata = true;
 
 // Configure series
-let polygonTemplate = polygonSeries.mapPolygons.template;
+var polygonTemplate = polygonSeries.mapPolygons.template;
 polygonTemplate.tooltipText = "{name}";
-polygonTemplate.polygon.fillOpacity = 0.6;
-
-
-// Create hover state and set alternative fill color
-let hs = polygonTemplate.states.create("hover");
-hs.properties.fill = chart.colors.getIndex(0);
+polygonTemplate.fill = am4core.color("#74B266");
 
 // Add image series
-let imageSeries = chart.series.push(new am4maps.MapImageSeries());
+/*let imageSeries = chart.series.push(new am4maps.MapImageSeries());
 imageSeries.mapImages.template.propertyFields.longitude = "longitude";
 imageSeries.mapImages.template.propertyFields.latitude = "latitude";
 imageSeries.mapImages.template.tooltipText = "{title}";
@@ -250,7 +240,7 @@ imageSeries.data = [ {
   "longitude": 28.1876,
   "color":colorSet.next()
 } ];
-
+*/
 
     });
     this.zone.runOutsideAngular(() => {
