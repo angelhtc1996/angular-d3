@@ -1546,44 +1546,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       title: "Extras",
       icon: "icon-single-02",
       "class": ""
-    }, {
-      path: "/maps",
-      title: "Echart",
-      icon: "icon-pin",
-      "class": ""
-    }, {
-      path: "/notifications",
-      title: "Highchart",
-      icon: "icon-bell-55",
-      "class": ""
-    }, {
-      path: "/icons",
-      title: "D3",
-      icon: "icon-atom",
-      "class": ""
-    }
-    /*{
-      path: "/tables",
-      title: "Table List",
-      rtlTitle: "قائمة الجدول",
-      icon: "icon-puzzle-10",
-      class: ""
-    },
-    {
-      path: "/typography",
-      title: "Typography",
-      rtlTitle: "طباعة",
-      icon: "icon-align-center",
-      class: ""
-    },
-    {
-      path: "/rtl",
-      title: "RTL Support",
-      rtlTitle: "ار تي ال",
-      icon: "icon-world",
-      class: ""
-    }*/
-    ];
+    }];
 
     var SidebarComponent =
     /*#__PURE__*/

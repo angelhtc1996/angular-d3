@@ -18,7 +18,7 @@ export const ROUTES: RouteInfo[] = [
     icon: "icon-single-02",
     class: ""
   },
-  {
+ /* {
     path: "/maps",
     title: "Echart",
     icon: "icon-pin",
