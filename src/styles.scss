@@ -1,17 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: black !important;
+}
 div#chartdiv div {
-    background: white;
+    background: black;
     border-radius: 20px;
 }
 div#chartdiv-2 div {
     height: 400px !important;
-    background: white;
+    background: black;
     border-radius: 10px;
 }
 #main div {
-    background: white;
+    background: black;
 }
 
 #main canvas {
     width: 380px !important;
+}
+g text {
+    fill: white;
+}
+.main-panel, .sidebar-wrappe {
+    background: black !important;
+}
+.card {
+    background: black !important;
 }
