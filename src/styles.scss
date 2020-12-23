@@ -27,3 +27,26 @@ g text {
 .card {
     background: black !important;
 }
+.card-chart .card-header .card-category {
+    font-family: Montserrat;
+    font-size: 18px;
+    color: #b2a863 !important;
+}
+.card-header {
+    background: #242021 !important;
+}
+.logo-img img {
+    width: 100% !important;
+}
+.logo-img {
+    width: 100% !important;
+    position: relative !important;
+}
+.sidebar .logo a.logo-mini, .off-canvas-sidebar .logo a.logo-mini {
+    width: 100% !important;
+    margin-left: 0px !important;
+    height: 80px;
+}
+.sidebar, .sidebar[data=red], .off-canvas-sidebar, .off-canvas-sidebar[data=red] {
+        background: linear-gradient(0deg, #000000 0%, #b5003d 100%) !important;
+    }

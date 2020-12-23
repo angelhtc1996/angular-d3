@@ -28,18 +28,12 @@ export class UserComponent implements OnInit {
     // Let's cut a hole in our Pie chart the size of 30% the radius
     chart.innerRadius = am4core.percent(50);
     pieSeries.colors.list = [
-      am4core.color('#f02bff'),
+      am4core.color('#f12cff'),
       am4core.color('#b030ff'),
       am4core.color('#d91c5c'),
-      am4core.color('#ff5252'),
-      am4core.color('#2af4dc'),
-      am4core.color('#faed24'),
-      am4core.color('#f17921'),
-      am4core.color('#34bc6e'),
-      am4core.color('#FC585C'),
-      am4core.color('#00E9C1'),
-      am4core.color('#FFB15A'),
-      am4core.color('#00CBDF')
+      am4core.color('#fb6808'),//1
+      am4core.color('#3ef3da'),
+      am4core.color('#f8eb43')
     ];
         /*#f02bff
 #b030ff
@@ -122,7 +116,7 @@ export class UserComponent implements OnInit {
     this.zone.runOutsideAngular(() => {
 
       let chart = am4core.create("chartdiv", am4charts.XYChart);
-      chart.scrollbarX = new am4core.Scrollbar();
+      //chart.scrollbarX = new am4core.Scrollbar();
 
       // Add data
       chart.data = [{
@@ -319,14 +313,14 @@ export class UserComponent implements OnInit {
       series.dataFields.radiusValue = "value";
       series.dataFields.category = "country";
       series.slices.template.cornerRadius = 6;
-      series.colors.step = 3;
+      //series.colors.step = 3;
       series.colors.list = [
-        am4core.color('#f02bff'),
+        am4core.color('#fb6808'),//1
+        am4core.color('#f12cff'),
         am4core.color('#b030ff'),
         am4core.color('#d91c5c'),
-        am4core.color('#ff5252'),
-        am4core.color('#2af4dc'),
-        am4core.color('#faed24')
+        am4core.color('#fc5355'),
+        am4core.color('#3ef3da')
       ];
       series.hiddenState.properties.endAngle = -90;
 
@@ -457,10 +451,10 @@ export class UserComponent implements OnInit {
 
       chart.seriesContainer.zIndex = -1;
 
-      chart.scrollbarX = new am4core.Scrollbar();
+     /* chart.scrollbarX = new am4core.Scrollbar();
       chart.scrollbarX.exportable = false;
       chart.scrollbarY = new am4core.Scrollbar();
-      chart.scrollbarY.exportable = false;
+      chart.scrollbarY.exportable = false;*/
 
       chart.cursor = new am4charts.RadarCursor();
       chart.cursor.innerRadius = am4core.percent(40);
