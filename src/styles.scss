@@ -50,3 +50,13 @@ g text {
 .sidebar, .sidebar[data=red], .off-canvas-sidebar, .off-canvas-sidebar[data=red] {
         background: linear-gradient(0deg, #000000 0%, #b5003d 100%) !important;
     }
+.navbar .navbar-wrapper a {
+    display: block;
+    position: fixed !important;
+    transform: rotate(-90deg);
+    top: 310px;
+    font-size: 100px;
+    font-weight: 500;
+    left: 20px;
+    color: #ffffff61;
+}

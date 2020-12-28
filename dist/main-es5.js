@@ -81,7 +81,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"logo\">\n  <a href=\"\" class=\"simple-text logo-mini\">\n    <div class=\"logo-img\">\n      <img src=\"./assets/img/angular2-logo-white.png\" />\n    </div>\n  </a>\n \n</div>\n<div class=\"sidebar-wrapper\">\n  <ul class=\"nav\">\n    <li\n      routerLinkActive=\"active\"\n      *ngFor=\"let menuItem of menuItems\"\n      class=\"{{ menuItem.class }} nav-item\"\n    >\n      <a [routerLink]=\"[menuItem.path]\">\n        <i class=\"tim-icons  {{ menuItem.icon }}\"></i>\n        <p>{{ menuItem.title }}</p>\n      </a>\n    </li>\n  </ul>\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"logo\">\n  <a href=\"\" class=\"simple-text logo-mini\">\n    <div class=\"logo-img\">\n      <img src=\"./assets/palletized_logo.png\" />\n    </div>\n  </a>\n \n</div>\n<div class=\"sidebar-wrapper\">\n  <ul class=\"nav\">\n    <li\n      routerLinkActive=\"active\"\n      *ngFor=\"let menuItem of menuItems\"\n      class=\"{{ menuItem.class }} nav-item\"\n    >\n      <a [routerLink]=\"[menuItem.path]\">\n        <i class=\"tim-icons  {{ menuItem.icon }}\"></i>\n        <p>{{ menuItem.title }}</p>\n      </a>\n    </li>\n  </ul>\n</div>\n";
     /***/
   },
 
@@ -787,7 +787,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var routes = [{
       path: "",
-      redirectTo: "dashboard",
+      redirectTo: "user",
       pathMatch: "full"
     }, {
       path: "",
@@ -805,7 +805,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }]
     }, {
       path: "**",
-      redirectTo: "dashboard"
+      redirectTo: "user"
     }];
 
     var AppRoutingModule = function AppRoutingModule() {
@@ -1536,12 +1536,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 
-    var ROUTES = [{
+    var ROUTES = [
+    /*{
       path: "/dashboard",
       title: "Dashboard",
       icon: "icon-chart-pie-36",
-      "class": ""
-    }, {
+      class: ""
+    },*/
+    {
       path: "/user",
       title: "Extras",
       icon: "icon-single-02",

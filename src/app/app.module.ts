@@ -14,6 +14,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppRoutingModule } from "./app-routing.module";
 import { ComponentsModule } from "./components/components.module";
 import { HighchartsChartModule } from "highcharts-angular";
+import { NgbdSortableHeader } from './pages/tables/sortable.directive';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { HighchartsChartModule } from "highcharts-angular";
     AppRoutingModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent],
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, NgbdSortableHeader],
   providers: [],
   bootstrap: [AppComponent]
 })
