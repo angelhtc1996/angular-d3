@@ -48,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"logo\">\n  <a href=\"\" class=\"simple-text logo-mini\">\n    <div class=\"logo-img\">\n      <img src=\"./assets/palletized_logo.png\" />\n    </div>\n  </a>\n \n</div>\n<div class=\"sidebar-wrapper\">\n  <ul class=\"nav\">\n    <li\n      routerLinkActive=\"active\"\n      *ngFor=\"let menuItem of menuItems\"\n      class=\"{{ menuItem.class }} nav-item\"\n    >\n      <a [routerLink]=\"[menuItem.path]\">\n        <i class=\"tim-icons  {{ menuItem.icon }}\"></i>\n        <p>{{ menuItem.title }}</p>\n      </a>\n    </li>\n  </ul>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"sidebar-wrapper\">\n  <ul class=\"nav\">\n    <li\n      routerLinkActive=\"active\"\n      *ngFor=\"let menuItem of menuItems\"\n      class=\"{{ menuItem.class }} nav-item\"\n    >\n      <a [routerLink]=\"[menuItem.path]\">\n        <i class=\"tim-icons  {{ menuItem.icon }}\"></i>\n        <p>{{ menuItem.title }}</p>\n      </a>\n    </li>\n  </ul>\n</div>\n");
 
 /***/ }),
 
@@ -862,9 +862,32 @@ const ROUTES = [
       class: ""
     },*/ {
         path: "/user",
-        title: "Extras",
+        title: "Dashboard",
         icon: "icon-single-02",
-        class: ""
+        class: "escritorio"
+    },
+    /*{
+       path: "/maps",
+       title: "Echart",
+       icon: "icon-pin",
+       class: "" },
+     {
+       path: "/notifications",
+       title: "Highchart",
+       icon: "icon-bell-55",
+       class: ""
+     },*/
+    {
+        path: "/icons",
+        title: "Inventory",
+        icon: "icon-atom",
+        class: "inventory"
+    },
+    {
+        path: "/tables",
+        title: "Orders",
+        icon: "icon-puzzle-10",
+        class: "Tablas"
     },
 ];
 let SidebarComponent = class SidebarComponent {
@@ -1193,12 +1216,13 @@ AuthLayoutComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
   \*****************************************/
-/*! exports provided: environment */
+/*! exports provided: environment, url_api */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "url_api", function() { return url_api; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
@@ -1206,6 +1230,10 @@ __webpack_require__.r(__webpack_exports__);
 
 const environment = {
     production: false
+};
+const url_api = {
+    dev: 'http://localhost:5000',
+    prod: ''
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -1269,7 +1297,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Hogar\Desktop\angular-d3-master\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/macbookpro/Desktop/Ilustrator/angular-d3/src/main.ts */"./src/main.ts");
 
 
 /***/ })

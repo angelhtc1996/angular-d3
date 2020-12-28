@@ -1,10 +1,8 @@
-import { Component, OnInit, QueryList, ViewChildren } from "@angular/core";
-import {DecimalPipe} from '@angular/common';
-import {Observable} from 'rxjs';
-import { Central3plService } from "src/app/services/central3pl.service";
-import { NgbdSortableHeader, SortEvent } from "./sortable.directive";
-
-
+import { AfterViewInit, ViewChild, Component, OnInit } from '@angular/core';
+import {MatSort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatPaginator} from '@angular/material/paginator';
+import { Central3plService } from 'src/app/services/central3pl.service';
 
 
 export interface inventoryElement {
@@ -45,38 +43,36 @@ const DATA: inventoryElement[] = [];
   templateUrl: "tables.component.html"
 })
 export class TablesComponent implements OnInit {
-  @ViewChildren(NgbdSortableHeader) headers: QueryList<NgbdSortableHeader>;
+  displayedColumns: string[] = ['upc','sku', 'description', 'available', 'minRestock'];
+  dataSource = new MatTableDataSource(DATA);
+
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
     public _central3plService: Central3plService,
   ) { }
   
   ngOnInit(): void {
-    //this.getInventory();
-    this.onSort;
+    this.getInventory();
   }
-  onSort({column, direction}: SortEvent) {
 
-    // resetting other headers
-    this.headers.forEach(header => {
-      if (header.sortable !== column) {
-        header.direction = '';
-      }
-    });
-
-    this._central3plService.getInventory().subscribe((res: any) => {
-      res.data.forEach((datos) => {
-        datos.sortColumn = column;
-        datos.sortDirection = direction
-      })
-    });
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
-  /*getInventory(){
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  getInventory(){
     this._central3plService.getInventory().subscribe((res:any) => {
       res.data.forEach((record) => {
-        record.sortColumn = 
-        //DATA.push(record);
+        DATA.push(record);
       })
+      this.dataSource.data = DATA;
     });
-  }*/
+  }
 }

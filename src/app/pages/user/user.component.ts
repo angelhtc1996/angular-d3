@@ -200,7 +200,10 @@ export class UserComponent implements OnInit {
 
       series.columns.template.adapter.add("fill", function(fill, target) {
         return chart.colors.getIndex(target.dataItem.index);
-      })
+
+        })
+       
+      
 
 
       let paretoValueAxis = chart.yAxes.push(new am4charts.ValueAxis());
@@ -232,7 +235,6 @@ export class UserComponent implements OnInit {
       // create chart
         let chart = am4core.create("chartdiv5", am4charts.GaugeChart);
         chart.hiddenState.properties.opacity = 0; // this makes initial fade in effect
-
         chart.innerRadius = -25;
 
         let axis = chart.xAxes.push(new am4charts.ValueAxis<am4charts.AxisRendererCircular>());
@@ -242,27 +244,31 @@ export class UserComponent implements OnInit {
         axis.renderer.grid.template.stroke = new am4core.InterfaceColorSet().getFor("background");
         axis.renderer.grid.template.strokeOpacity = 0.3;
 
-        let colorSet = new am4core.ColorSet();
+      chart.colors.list = [
+        am4core.color('#fb6808'),
+        am4core.color('#d91c5c'),
+        am4core.color('#f12cff')
+      ]
 
         let range0 = axis.axisRanges.create();
         range0.value = 0;
         range0.endValue = 50;
         range0.axisFill.fillOpacity = 1;
-        range0.axisFill.fill = colorSet.getIndex(0);
+        range0.axisFill.fill = chart.colors.next();
         range0.axisFill.zIndex = - 1;
 
         let range1 = axis.axisRanges.create();
         range1.value = 50;
         range1.endValue = 80;
         range1.axisFill.fillOpacity = 1;
-        range1.axisFill.fill = colorSet.getIndex(2);
+        range1.axisFill.fill = chart.colors.next();
         range1.axisFill.zIndex = -1;
 
         let range2 = axis.axisRanges.create();
         range2.value = 80;
         range2.endValue = 100;
         range2.axisFill.fillOpacity = 1;
-        range2.axisFill.fill = colorSet.getIndex(4);
+        range2.axisFill.fill = chart.colors.next();
         range2.axisFill.zIndex = -1;
 
         let hand = chart.hands.push(new am4charts.ClockHand());
@@ -379,7 +385,7 @@ export class UserComponent implements OnInit {
       ];
 
       chart.padding(20, 20, 20, 20);
-      chart.colors.step = 2;
+      //chart.colors.step = 2;
       chart.dateFormatter.inputDateFormat = "YYYY-MM-dd";
       chart.innerRadius = am4core.percent(40);
 
@@ -412,6 +418,8 @@ export class UserComponent implements OnInit {
       series1.clustered = false;
       series1.columns.template.radarColumn.cornerRadius = 30;
       series1.columns.template.tooltipText = "{category}: {openDateX} - {dateX}";
+      series1.fill = am4core.color('#3ef3da');
+      series1.stroke = am4core.color('#3ef3da');
 
       let series2 = chart.series.push(new am4charts.RadarColumnSeries());
       series2.name = "Series 2";
@@ -421,6 +429,8 @@ export class UserComponent implements OnInit {
       series2.clustered = false;
       series2.columns.template.radarColumn.cornerRadius = 30;
       series2.columns.template.tooltipText = "{category}: {openDateX} - {dateX}";
+      series2.fill = am4core.color('#b030ff');
+      series2.stroke = am4core.color('#b030ff');
 
       let series3 = chart.series.push(new am4charts.RadarColumnSeries());
       series3.name = "Series 3";
@@ -430,6 +440,9 @@ export class UserComponent implements OnInit {
       series3.clustered = false;
       series3.columns.template.radarColumn.cornerRadius = 30;
       series3.columns.template.tooltipText = "{category}: {openDateX} - {dateX}";
+      series3.fill = am4core.color('#f12cff');
+      series3.stroke = am4core.color('#f12cff');
+
 
       let series4 = chart.series.push(new am4charts.RadarColumnSeries());
       series4.name = "Series 4";
@@ -439,6 +452,8 @@ export class UserComponent implements OnInit {
       series4.clustered = false;
       series4.columns.template.radarColumn.cornerRadius = 30;
       series4.columns.template.tooltipText = "{category}: {openDateX} - {dateX}";
+      series4.fill = am4core.color('#d91c5c');
+      series4.stroke = am4core.color('#d91c5c');
 
       let series5 = chart.series.push(new am4charts.RadarColumnSeries());
       series5.name = "Series 5";
@@ -448,6 +463,8 @@ export class UserComponent implements OnInit {
       series5.clustered = false;
       series5.columns.template.radarColumn.cornerRadius = 30;
       series5.columns.template.tooltipText = "{category}: {openDateX} - {dateX}";
+      series5.fill = am4core.color('#fb6808');
+      series5.stroke = am4core.color('#fb6808');
 
       chart.seriesContainer.zIndex = -1;
 

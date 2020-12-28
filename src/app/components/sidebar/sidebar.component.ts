@@ -14,11 +14,11 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },*/{
     path: "/user",
-    title: "Extras",
+    title: "Dashboard",
     icon: "icon-single-02",
-    class: ""
+    class: "escritorio"
   },
- /* {
+ /*{
     path: "/maps",
     title: "Echart",
     icon: "icon-pin",
@@ -28,18 +28,18 @@ export const ROUTES: RouteInfo[] = [
     title: "Highchart",
     icon: "icon-bell-55",
     class: ""
-  },
+  },*/
   {
     path: "/icons",
-    title: "D3",
+    title: "Inventory",
     icon: "icon-atom",
-    class: ""
-  }*/
+    class: "inventory"
+  },
   {
     path: "/tables",
-    title: "Table List",
+    title: "Orders",
     icon: "icon-puzzle-10",
-    class: ""
+    class: "Tablas"
   },/*
   {
     path: "/typography",

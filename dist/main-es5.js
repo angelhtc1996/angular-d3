@@ -81,7 +81,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"logo\">\n  <a href=\"\" class=\"simple-text logo-mini\">\n    <div class=\"logo-img\">\n      <img src=\"./assets/palletized_logo.png\" />\n    </div>\n  </a>\n \n</div>\n<div class=\"sidebar-wrapper\">\n  <ul class=\"nav\">\n    <li\n      routerLinkActive=\"active\"\n      *ngFor=\"let menuItem of menuItems\"\n      class=\"{{ menuItem.class }} nav-item\"\n    >\n      <a [routerLink]=\"[menuItem.path]\">\n        <i class=\"tim-icons  {{ menuItem.icon }}\"></i>\n        <p>{{ menuItem.title }}</p>\n      </a>\n    </li>\n  </ul>\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"sidebar-wrapper\">\n  <ul class=\"nav\">\n    <li\n      routerLinkActive=\"active\"\n      *ngFor=\"let menuItem of menuItems\"\n      class=\"{{ menuItem.class }} nav-item\"\n    >\n      <a [routerLink]=\"[menuItem.path]\">\n        <i class=\"tim-icons  {{ menuItem.icon }}\"></i>\n        <p>{{ menuItem.title }}</p>\n      </a>\n    </li>\n  </ul>\n</div>\n";
     /***/
   },
 
@@ -1545,9 +1545,31 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     },*/
     {
       path: "/user",
-      title: "Extras",
+      title: "Dashboard",
       icon: "icon-single-02",
-      "class": ""
+      "class": "escritorio"
+    },
+    /*{
+       path: "/maps",
+       title: "Echart",
+       icon: "icon-pin",
+       class: "" },
+     {
+       path: "/notifications",
+       title: "Highchart",
+       icon: "icon-bell-55",
+       class: ""
+     },*/
+    {
+      path: "/icons",
+      title: "Inventory",
+      icon: "icon-atom",
+      "class": "inventory"
+    }, {
+      path: "/tables",
+      title: "Orders",
+      icon: "icon-puzzle-10",
+      "class": "Tablas"
     }];
 
     var SidebarComponent =
@@ -2025,7 +2047,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     !*** ./src/environments/environment.ts ***!
     \*****************************************/
 
-  /*! exports provided: environment */
+  /*! exports provided: environment, url_api */
 
   /***/
   function srcEnvironmentsEnvironmentTs(module, __webpack_exports__, __webpack_require__) {
@@ -2037,6 +2059,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     __webpack_require__.d(__webpack_exports__, "environment", function () {
       return environment;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "url_api", function () {
+      return url_api;
     });
     /* harmony import */
 
@@ -2050,6 +2078,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var environment = {
       production: false
+    };
+    var url_api = {
+      dev: 'http://localhost:5000',
+      prod: ''
     };
     /*
      * For easier debugging in development mode, you can import the following file
@@ -2143,7 +2175,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! C:\Users\Hogar\Desktop\angular-d3-master\src\main.ts */
+    /*! /Users/macbookpro/Desktop/Ilustrator/angular-d3/src/main.ts */
     "./src/main.ts");
     /***/
   }
