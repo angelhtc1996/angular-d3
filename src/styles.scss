@@ -129,3 +129,29 @@ li.inventory.nav-item {
     width: 150px;
     border-radius: 15px;
 }
+
+
+
+
+
+//Media queries
+@media(max-width: 480px){
+    body {
+        background: url('./assets/fondo.png');
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+    }
+    .navbar .navbar-wrapper a {
+        display: block;
+        position: relative !important; 
+        -webkit-transform: rotate(0deg) !important;
+        transform: rotate(0deg) !important; 
+        top: 0px !important;
+        font-size: 1rem !important;
+        font-weight: 500;
+        left: auto !important;
+        color: #fff;
+        background: transparent !important;
+    }
+}
