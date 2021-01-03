@@ -40,11 +40,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { AdminLayoutRoutes } from "./admin-layout.routing";
 import { DashboardComponent } from "../../pages/dashboard/dashboard.component";
-import { IconsComponent } from "../../pages/icons/icons.component";
+import { IconsComponent } from "../../pages/orders/icons.component";
 import { MapComponent } from "../../pages/map/map.component";
 import { NotificationsComponent } from "../../pages/notifications/notifications.component";
 import { UserComponent } from "../../pages/user/user.component";
-import { DialogOverviewExampleDialog, TablesComponent } from "../../pages/tables/tables.component";
+import { DialogOverviewExampleDialog, TablesComponent } from "../../pages/inventory/tables.component";
 import { TypographyComponent } from "../../pages/typography/typography.component";
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
 import { StackchartComponent } from '../../pages/map/stackchart.component';
@@ -57,6 +57,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { JsonService } from 'src/app/pages/user/json.service';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { HighchartsService } from '../../pages/notifications/Highcharts.service';
+import { OrdersDetailComponent } from "src/app/pages/orders/orders-detail/orders-detail.component";
 
 
 
@@ -111,7 +112,8 @@ import { HighchartsService } from '../../pages/notifications/Highcharts.service'
     StackchartComponent, 
     PiechartComponent,
     amchartComponent,
-    DialogOverviewExampleDialog
+    DialogOverviewExampleDialog,
+    OrdersDetailComponent
   ],
   providers: [JsonService, HighchartsService],
   entryComponents: [DialogOverviewExampleDialog]

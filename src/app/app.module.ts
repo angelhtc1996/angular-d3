@@ -25,6 +25,7 @@ import { HighchartsChartModule } from "highcharts-angular";
 
 
 
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,

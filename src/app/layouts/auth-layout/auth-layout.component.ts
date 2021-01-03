@@ -41,7 +41,7 @@ export class AuthLayoutComponent implements OnInit {
             if (typeof key != 'object') this._authService.loggedIn[key] = res.data[key];
           });
           if (this._authService.loggedIn.status != -1) {
-            this._route.navigateByUrl('/user');
+            this._route.navigate(['dashboard']);
             this._toastr.success(`Welcome ${this._authService.loggedIn.name}`, 'Notification');
           } else {
             this._toastr.error('Your user has been blocked', 'Notification')

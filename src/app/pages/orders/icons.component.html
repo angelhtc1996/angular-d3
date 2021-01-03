@@ -1,0 +1,118 @@
+<div class=" content">
+    
+    <div fxLayout="row">
+        <div>
+            <mat-form-field>
+                <mat-label>Search</mat-label>
+                <input matInput (keyup)="applyFilter($event)" #input>
+            </mat-form-field>
+        </div>
+        <div>
+            <!--<mat-form-field *ngIf='currentUser.role == "Administrator"'>
+                <mat-label>Customer</mat-label>
+                <mat-select (selectionChange)="selectCustomer($event)">
+                    <mat-option *ngFor="let customer of customers" [value]="customer.CustomerId">
+                        {{customer.CustomerId}} : {{customer.CompanyName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>-->
+        </div>
+    </div>
+    <div class="table-orders">
+
+        <table mat-table [dataSource]="dataSource" matSort 
+        class="mat-elevation-z8 table-striped orders"
+        (scroll)="onTableScroll($event)"
+        >
+
+            <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+            <ng-container matColumnDef="Tracking">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-palletized"> Tracking 
+                    <div class="box-header">
+                        <div class="circle">
+                            <div class="icon-img"></div>
+                        </div>
+                    </div>
+                </th>
+                <td mat-cell *matCellDef="let element"> {{element.Tracking}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="ReferenceNum">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-palletized"> Reference 
+                    <div class="box-header">
+                        <div class="circle">
+                            <div class="icon-img"></div>
+                        </div>
+                    </div>
+                </th>
+                <td mat-cell *matCellDef="let element"> {{element.ReferenceNum}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="CustomerName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-palletized"> Customer 
+                    <div class="box-header">
+                        <div class="circle">
+                            <div class="icon-img"></div>
+                        </div>
+                    </div>
+                </th>
+                <td mat-cell *matCellDef="let element"> {{element.CustomerName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="CreationDate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-palletized"> Create Date 
+                    <div class="box-header">
+                        <div class="circle">
+                            <div class="icon-img"></div>
+                        </div>
+                    </div>
+                </th>
+                <td mat-cell *matCellDef="let element"> {{element.CreationDate}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="NumUnits1">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-palletized"> Line Items 
+                    <div class="box-header">
+                        <div class="circle">
+                            <div class="icon-img"></div>
+                        </div>
+                    </div>
+                </th>
+                <td mat-cell *matCellDef="let element"> {{element.NumUnits1}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Status">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-palletized"> Status 
+                    <div class="box-header">
+                        <div class="circle">
+                            <div class="icon-img"></div>
+                        </div>
+                    </div>
+                </th>
+                <td mat-cell *matCellDef="let element">
+                    <div *ngIf="element.Status==0" class="open"> Open</div>
+                    <div *ngIf="element.Status==1" class="clsd"> Closed</div>
+                    <div *ngIf="element.Status==2" class="cancel"> Canceled</div>
+                </td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="getRecord(row)"></tr>
+
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="6">No data matching the filter "{{input.value}}"</td>
+            </tr>
+        </table>
+        <mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 50, 100]" showFirstLastButtons></mat-paginator>
+
+    </div>
+</div>
+
+
+<mat-drawer #sideNav mode="side" position="end">
+    <app-orders-detail [rowData]="rowData" [sideNav]="sideNav"></app-orders-detail>
+</mat-drawer>

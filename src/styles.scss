@@ -225,6 +225,23 @@ th.header-palletized {
     color: transparent;
 }
 
+.orders .mat-sort-header-content {
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 135px;
+}
+table.mat-table.orders{
+    border-collapse: collapse;
+    max-height: 500px;
+    overflow: auto;
+}
+.table-orders{
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    min-width: 300px;
+}
+
 /*Estilos de tablas White*/
 .white-content .mat-paginator {
     background: #ffffff00;

@@ -23,16 +23,16 @@ export const ROUTES: RouteInfo[] = [
     class: "escritorio"
   },
   {
-    path: "/icons",
-    title: "Inventory",
+    path: "/orders",
+    title: "Orders",
     icon: "icon-atom",
-    class: "inventory"
+    class: "Tablas"
   },
   {
-    path: "/tables",
-    title: "Orders",
+    path: "/inventory",
+    title: "Inventory",
     icon: "icon-puzzle-10",
-    class: "Tablas"
+    class: "inventory"
   },  {
     path: "/notifications",
     title: "Settings",

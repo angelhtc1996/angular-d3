@@ -1,0 +1,44 @@
+<div class="main-container">
+
+    <div fxLayout="row">
+
+        <!-- Close sidebar button -->
+        <div class="button-close-side">
+            <button type="button" fxFlexFill mat-button (click)="sideNav.close()">
+                <mat-icon>arrow_right</mat-icon>
+            </button>
+        </div>
+
+        <!-- Details Content -->
+        <div fxLayout="column" fxFlexFill>
+
+
+            <!-- Customer Information Section -->
+            <mat-expansion-panel expanded hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Customer Information
+                    </mat-panel-title>
+                    <mat-panel-description></mat-panel-description>
+                </mat-expansion-panel-header>
+
+
+                <p>This is the primary content of the panel. {{rowData.ReferenceNum}}</p>
+            </mat-expansion-panel>
+
+            <!-- Shipping Information Section -->
+            <mat-expansion-panel expanded hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Shipping Information
+                    </mat-panel-title>
+                    <mat-panel-description></mat-panel-description>
+                </mat-expansion-panel-header>
+
+
+                <p>I'm visible because I am open</p>
+            </mat-expansion-panel>
+
+        </div>
+    </div>
+</div>
