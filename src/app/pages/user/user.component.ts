@@ -91,7 +91,7 @@ export class UserComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.zone.runOutsideAngular(() => {
+    /*this.zone.runOutsideAngular(() => {
       // Create map instance
       let chart = am4core.create("chartdiv4", am4maps.MapChart);
 
@@ -112,7 +112,7 @@ export class UserComponent implements OnInit {
 
 
 
-    });
+    });*/
     this.zone.runOutsideAngular(() => {
 
       let chart = am4core.create("chartdiv", am4charts.XYChart);
@@ -272,6 +272,8 @@ export class UserComponent implements OnInit {
         range2.axisFill.zIndex = -1;
 
         let hand = chart.hands.push(new am4charts.ClockHand());
+        hand.fill = am4core.color("#fff");
+        hand.stroke = am4core.color("#fff");
 
         // using chart.setTimeout method as the timeout will be disposed together with a chart
         chart.setTimeout(randomValue, 2000);
@@ -317,9 +319,8 @@ export class UserComponent implements OnInit {
       let series = chart.series.push(new am4charts.PieSeries());
       series.dataFields.value = "value";
       series.dataFields.radiusValue = "value";
-      series.dataFields.category = "country";
+      series.dataFields.category = "country \n";
       series.slices.template.cornerRadius = 6;
-      //series.colors.step = 3;
       series.colors.list = [
         am4core.color('#fb6808'),//1
         am4core.color('#f12cff'),
@@ -329,8 +330,27 @@ export class UserComponent implements OnInit {
         am4core.color('#3ef3da')
       ];
       series.hiddenState.properties.endAngle = -90;
-
-      chart.legend = new am4charts.Legend();
+      series.ticks.template.disabled = true;
+      series.alignLabels = false;
+      series.labels.template.relativeRotation = 90;
+      series.labels.template.text = '{country} '+'{value.percent.formatNumber("#.0")}%';
+      series.labels.template.radius = am4core.percent(-40);
+      series.labels.template.fill = am4core.color("white");
+      series.labels.template.adapter.add("radius", function(radius, target) {
+        if (target.dataItem && (target.dataItem.values.value.percent < 10)) {
+          return 0;
+        }
+        return radius;
+      });
+      
+      series.labels.template.adapter.add("fill", function(color, target) {
+        if (target.dataItem && (target.dataItem.values.value.percent < 10)) {
+          return am4core.color("#000");
+        }
+        return color;
+      });
+      /* Add legend */
+      
     });
 
     this.zone.runOutsideAngular(() => {
@@ -484,54 +504,6 @@ export class UserComponent implements OnInit {
       yearLabel.verticalCenter = "middle";
     });
 
-    /* Scrooball series */
-    this.zone.runOutsideAngular(() => {
-  
-        // Create chart instance
-        let chart = am4core.create("chartdiv3", am4charts.XYChart);
-  
-        // Add data
-        chart.data = [];
-  
-        // Create axes
-        let categoryAxis = chart.xAxes.push(new am4charts.DateAxis());
-        categoryAxis.renderer.grid.template.location = 0;
-        //categoryAxis.renderer.minGridDistance = 30;
-  
-        let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-        let scrollbarX = new am4charts.XYChartScrollbar();
-  
-        // Create series
-        function createSeries(field, name) {
-          var series = chart.series.push(new am4charts.LineSeries());
-          series.dataFields.valueY = field;
-          series.dataFields.dateX = "date";
-          series.name = name;
-          series.tooltipText = "{dateX}: [b]{valueY}[/]";
-          series.strokeWidth = 2;
-  
-          var bullet = series.bullets.push(new am4charts.CircleBullet());
-          bullet.circle.stroke = am4core.color("#fff");
-          bullet.circle.strokeWidth = 2;
-          scrollbarX.series.push(series);
-  
-        }
-  
-        createSeries("value", "Series #1");
-        createSeries("value2", "Series #2");
-        createSeries("value3", "Series #3");
-  
-        chart.scrollbarX = scrollbarX;
-  
-        this.chart = chart;
-        let self = this;
-        setTimeout(function () {
-          self.jsonService.getData().subscribe((data: any): void => {
-            self.chart.data = data;
-          });
-        }, 2000)
-  
-      });
   }
 
   makeData(data) {

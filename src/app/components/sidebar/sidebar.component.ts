@@ -12,23 +12,16 @@ export const ROUTES: RouteInfo[] = [
     title: "Dashboard",
     icon: "icon-chart-pie-36",
     class: ""
-  },*/{
+  }, {
+    path: "/maps",
+    title: "Echart",
+    icon: "icon-pin",
+    class: "" },*/{
     path: "/user",
     title: "Dashboard",
     icon: "icon-single-02",
     class: "escritorio"
   },
- /*{
-    path: "/maps",
-    title: "Echart",
-    icon: "icon-pin",
-    class: "" },
-  {
-    path: "/notifications",
-    title: "Highchart",
-    icon: "icon-bell-55",
-    class: ""
-  },*/
   {
     path: "/icons",
     title: "Inventory",
@@ -40,7 +33,12 @@ export const ROUTES: RouteInfo[] = [
     title: "Orders",
     icon: "icon-puzzle-10",
     class: "Tablas"
-  },/*
+  },  {
+    path: "/notifications",
+    title: "Settings",
+    icon: "icon-bell-55",
+    class: "options"
+  }/*
   {
     path: "/typography",
     title: "Typography",

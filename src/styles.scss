@@ -129,9 +129,136 @@ li.inventory.nav-item {
     width: 150px;
     border-radius: 15px;
 }
+li.options.nav-item {
+    list-style: none;
+    background: #d91c5c;
+    width: 150px;
+    border-radius: 15px;
+}
 
+/*Estilos de tablas Dark*/
+.mat-paginator {
+    background: #ffffff00;
+}
+.mat-paginator-container, 
+.mat-select-value, 
+.mat-select-arrow, 
+.mat-icon-button.mat-button-disabled.mat-button-disabled, 
+.mat-form-field-appearance-legacy .mat-form-field-label{
+    color: rgb(255 254 254) !important;
+} 
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+    background: white !important;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #2f2d2e !important;
+}
+.mat-form-field-appearance-legacy .mat-form-field-label {
+    color: rgb(255 254 254) !important;
+}
+table.mat-table {
+    border-spacing: 6px !important;
+    border-collapse: separate;
+    background: transparent !important;
+}
 
+.mat-cell, .mat-footer-cell {
+    color: rgb(255 255 255 / 87%);
+    text-align: center;
+    font-size: 12px !important;
+}
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+     padding-left: 10px !important; 
+}
 
+table.mat-table.cdk-table.mat-sort.mat-elevation-z8 {
+    width: 100%;
+}
+th.header-palletized {
+    background: #f17921;
+    color: white;
+    font-weight: 600;
+    padding: 0 0 0 5px !important;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    width: 20px;
+}
+.mat-sort-header-content {
+    justify-content: space-between;
+    width: 160px;
+}
+.box-header {
+    width: 25%;
+    height: auto;
+    background: #69462c;
+    padding: 0px 5px;
+    margin-right: -12px;
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+    position: relative;
+    display: inline-block;
+}
+
+.circle {
+    width: 20px;
+    height: 45px;
+    position: relative;
+    left: -11px;
+    background: #ec7620;
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+}
+
+.icon-img {
+    width: 40px;
+    height: 30px;
+    background: url('./assets/icon-white.png');
+    background-size: 17px 10px;
+    position: absolute;
+    top: 9px;
+    left: 0px;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.mat-sort-header-arrow, [dir=rtl] .mat-sort-header-position-before .mat-sort-header-arrow {
+    margin: 0 0 0 -10px;
+    color: transparent;
+}
+
+/*Estilos de tablas White*/
+.white-content .mat-paginator {
+    background: #ffffff00;
+}
+.white-content .mat-paginator-container, .white-content .mat-select-value, .white-content .mat-select-arrow, .white-content .mat-form-field-appearance-legacy .mat-form-field-underline, .white-content .mat-icon-button.mat-button-disabled.mat-button-disabled {
+    color: #000 !important;
+}
+.white-content .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #2f2d2e2b !important;
+}
+table.mat-table {
+    border-collapse: separate;
+}
+.mat-table {
+    background: transparent !important;
+}
+.white-content .mat-cell, .mat-footer-cell {
+    color: #000;
+    text-align: center;
+}
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+     padding-left: 10px !important; 
+}
+.white-content .mat-table thead, .white-content [mat-header-row]{
+    background: transparent !important;
+}
+.white-content th.header-palletized {
+    background: #f17921;
+    color: #000 !important;
+    font-weight: 600;
+    padding: 15px !important;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
 
 
 //Media queries
@@ -141,6 +268,9 @@ li.inventory.nav-item {
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
+    }
+    body .main-panel .content {
+        padding-left: 15px !important;
     }
     .navbar .navbar-wrapper a {
         display: block;
@@ -153,5 +283,23 @@ li.inventory.nav-item {
         left: auto !important;
         color: #fff;
         background: transparent !important;
+    }
+    .mat-sort-header-content {
+        justify-content: space-between;
+        width: 40px !important;
+        font-size: 10px !important;
+        padding-left: 4px;
+    }
+    th.header-palletized {
+        width: auto !important;
+    }
+    .fixed-plugin {
+        top: 80px !important;
+    }
+    body .fixed-plugin .dropdown-menu{
+        top: 22px !important;
+    }
+    .box-header{
+        display: none;
     }
 }

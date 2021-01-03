@@ -4,6 +4,7 @@ import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 
+
 //Material Module
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
@@ -43,13 +44,14 @@ import { IconsComponent } from "../../pages/icons/icons.component";
 import { MapComponent } from "../../pages/map/map.component";
 import { NotificationsComponent } from "../../pages/notifications/notifications.component";
 import { UserComponent } from "../../pages/user/user.component";
-import { TablesComponent } from "../../pages/tables/tables.component";
+import { DialogOverviewExampleDialog, TablesComponent } from "../../pages/tables/tables.component";
 import { TypographyComponent } from "../../pages/typography/typography.component";
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
 import { StackchartComponent } from '../../pages/map/stackchart.component';
 import { LinechartComponent } from '../../pages/map/linechart.component';
 import { PiechartComponent } from '../../pages/map/piechart.component';
-import { amchartComponent } from '../../pages/user/amchart.component'
+import { amchartComponent } from '../../pages/user/amchart.component';
+//import { LoginComponent } from '../../pages/login/login.component';
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { JsonService } from 'src/app/pages/user/json.service';
@@ -108,8 +110,10 @@ import { HighchartsService } from '../../pages/notifications/Highcharts.service'
     LinechartComponent,
     StackchartComponent, 
     PiechartComponent,
-    amchartComponent
+    amchartComponent,
+    DialogOverviewExampleDialog
   ],
   providers: [JsonService, HighchartsService],
+  entryComponents: [DialogOverviewExampleDialog]
 })
 export class AdminLayoutModule {}
